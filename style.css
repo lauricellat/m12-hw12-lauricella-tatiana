@@ -11,7 +11,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   min-height: 100vh;
-  max-width: fit-content;
   display: grid;
   grid-template-areas: 
   'header header'
@@ -36,6 +35,10 @@ body {
   font-family: 'Pacifico', cursive;
 }
 
+.nav {
+  grid-area: nav;
+}
+
 .nav__container {
   box-shadow: var(--gray) 4px 4px 10px 2px;
   display: grid;
@@ -45,7 +48,6 @@ body {
   justify-items: center;
   padding: 24px;
   margin: 20px;
-  grid-area: nav;
 }
 
 .nav__link, .nav__link--active {
@@ -72,9 +74,9 @@ body {
 .img_card__container {
   margin: 20px;
   display: grid;
-  grid-template-columns: repeat(autofit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: 350px;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
   grid-gap: 20px;
   grid-area: img;
 }
@@ -110,7 +112,15 @@ body {
     grid-auto-rows: initial;
     grid-auto-flow: column;
     justify-items: center;
-
+    display: block;
+		flex-wrap: wrap;
+		margin: auto;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		justify-content: space-between;
+		min-width: 150px;
+		text-align: center;
     }
   }
   .nav__link, .nav__link--active {
